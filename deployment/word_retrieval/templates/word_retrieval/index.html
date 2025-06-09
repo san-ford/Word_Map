@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Word Association Game</title>
+
+    <p>Enter a word to retrieve a random array of associated words.</p>
+
+    <form action="{% url 'result' %}" method="get">
+        {% csrf_token %}
+        <fieldset>
+            <legend><h1>{{ word_input.user_text }}</h1></legend>
+            {% if error_message %}
+                <p><strong>{{ error_message }}</strong></p>
+            {% endif %}
+            <label for="user_input">Word:</label>
+            <input type="text" name="word_input" id="user_input">
+            <br>
+        </fieldset>
+        <input type="submit" value="Submit">
+    </form>
+
+</head>
+<body>
+
+</body>
+</html>

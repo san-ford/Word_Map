@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Result</title>
+
+    {% if word_sample %}
+        <p>Random array of words associated with "{{word}}":</p>
+    <ul>
+    {% for new_word in word_sample %}
+
+        <form action="{% url 'result' %}" method="get">
+        {% csrf_token %}
+        <fieldset>
+            <label for="next_word">Find more words similar to:</label>
+            <input type="submit" name="word_input" id="next_word" value="{{new_word.return_text}}">
+            <br>
+        </fieldset>
+        </form>
+
+    {% endfor %}
+    </ul>
+    {% else %}
+        <p>No associated words are available.</p>
+    {% endif %}
+
+    <li><a href="{% url 'index' %}">Return to index page</a></li>
+
+</head>
+<body>
+
+</body>
+</html>
