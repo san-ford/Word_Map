@@ -10,9 +10,9 @@ django.setup()
 from word_retrieval.models import WordInput
 
 # import list of most common English words
-words = pd.read_csv("common_words.csv")
+words = pd.read_csv("../common_words.csv")
 # import list of word predictions
-word_categories = pd.read_csv("word_categories.csv")
+word_categories = pd.read_csv("../word_categories.csv")
 
 # convert into a suitable format
 words = np.array(words['word'])
