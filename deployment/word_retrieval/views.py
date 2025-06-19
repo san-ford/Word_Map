@@ -36,7 +36,7 @@ def result(request, word="Hello"):
     # retrieve only the id of word submitted
     word_id = word_id[1]
     # retrieve the word from the database
-    w = get_object_or_404(WordInput, user_text__startswith=str(word_id+1))
+    w = get_object_or_404(WordInput, user_text__exact=str(word_id+1))
     # retrieve all similar words
     words = list(w.wordoutput_set.all())
     # choose up to 5 random words from the associated words list
