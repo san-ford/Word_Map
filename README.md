@@ -20,7 +20,7 @@ python3 populate.py
 
 ### Run App
 ```bash
-Python3 manage.py migrate
+Python3 manage.py runserver
 ```
 
 Once the app is running, use a browser to navigate to:
