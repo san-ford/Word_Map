@@ -13,14 +13,14 @@ conda activate word_map_env
 ### Make Database
 To create and populate the database, navigate to the 'deployment' directory and run the following commands
 ```bash
-Python3 manage.py migrate
+python3 manage.py migrate
 python3 manage.py sqlmigrate word_retrieval 0001
 python3 populate.py
 ```
 
 ### Run App
 ```bash
-Python3 manage.py runserver
+python3 manage.py runserver
 ```
 
 Once the app is running, use a browser to navigate to:
